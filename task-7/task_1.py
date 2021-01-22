@@ -19,7 +19,7 @@ def bubble_sort(array: list):
     while n < len(array):
         is_change = False
         for i in range(len(array) - n):
-            if array[i] > array[i + 1]:
+            if array[i] < array[i + 1]:
                 array[i], array[i + 1] = array[i + 1], array[i]
                 is_change = True
         if not is_change:
@@ -29,6 +29,8 @@ def bubble_sort(array: list):
     return array
 
 
-a = [i for i in range(-100, 100)]
+a = [random.randint(-100, 100) for i in range(10)]
 random.shuffle(a)
+print(f"Исходный массив: {a}")
 bubble_sort(a)
+print(f"Отсортированный массив: {a}")

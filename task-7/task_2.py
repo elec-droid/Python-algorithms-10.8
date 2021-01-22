@@ -35,7 +35,7 @@ def merge(left, right):
     return result
 
 
-a = [random.randint(0, 50) / random.randint(1, 10) for i in range(0, 50)]
+a = [random.randint(0, 50) / random.randint(1, 10) for i in range(10)]
 # a = [i for i in range(0, 50)]
 random.shuffle(a)
 
