@@ -49,6 +49,9 @@ def entry_count(s: str, sep=None, is_subs=False):
             for j in range(i + 1, length):
                 subs.add(s[i:j])
 
+        if ' ' in subs:
+            subs.remove(' ')
+
         subs = list(subs)
         subs.sort(key=len)
     elif is_subs:       # Для поиска конкретной подстроки
@@ -79,7 +82,7 @@ if in_str == '':
     in_str = "Здесь будет моя строка потому что Вы не ввели нечего"
     print(in_str)
 
-entries = entry_count("Сложная строка текста")
+entries = entry_count(in_str)
 for itr in entries:
     if itr[1] > 1:
         print(f"'{itr[0]}'", itr[1], sep=' ' * (8 - len(itr[0])))
